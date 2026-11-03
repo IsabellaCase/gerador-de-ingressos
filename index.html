@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08051a">
+    <meta name="description" content="Gere seu ingresso para a Coding Conf 2025.">
+    <title>Gerador de ingressos | Coding Conf</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="decor decor--top" aria-hidden="true"></div>
+      <div class="decor decor--bottom" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Coding Conf — página inicial">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>Coding Conf</span>
+        </a>
+      </header>
+
+      <main>
+        <section class="form-view" id="form-view" aria-labelledby="page-title">
+          <div class="intro">
+            <h1 id="page-title">Seu ingresso para a<br class="desktop-break"> próxima grande conferência de programação.</h1>
+            <p>Junte-se a nós em Austin, TX, de 15 a 17 de janeiro de 2025.</p>
+          </div>
+
+          <form id="ticket-form" novalidate>
+            <div class="field-group">
+              <label for="avatar">Envie seu avatar</label>
+              <div class="upload-area" id="upload-area">
+                <input id="avatar" name="avatar" type="file" accept="image/png,image/jpeg" required aria-describedby="avatar-hint avatar-error">
+                <div class="upload-content" id="upload-content">
+                  <span class="upload-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="upload-copy">Arraste e solte ou <span>escolha uma imagem</span></span>
+                </div>
+              </div>
+              <p class="field-hint" id="avatar-hint"><span aria-hidden="true">ⓘ</span> Envie uma imagem PNG ou JPG (máx. 500KB).</p>
+              <p class="field-error" id="avatar-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="full-name">Nome completo</label>
+              <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Seu nome" required aria-describedby="name-error">
+              <p class="field-error" id="name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="email">Endereço de e-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="exemplo@email.com" required aria-describedby="email-error">
+              <p class="field-error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field-group">
+              <label for="github">Nome de usuário do GitHub</label>
+              <input id="github" name="github" type="text" autocomplete="off" placeholder="@seuusuario" required aria-describedby="github-error">
+              <p class="field-error" id="github-error" aria-live="polite"></p>
+            </div>
+
+            <button class="submit-button" type="submit">Gerar meu ingresso</button>
+          </form>
+        </section>
+
+        <section class="success-view" id="success-view" aria-labelledby="success-title" hidden>
+          <div class="intro success-intro">
+            <h1 id="success-title">Parabéns, <span id="success-name"></span>!<br>Seu ingresso está pronto.</h1>
+            <p>Enviamos os detalhes para <strong id="success-email"></strong>.<br>Mal podemos esperar para ver você na Coding Conf!</p>
+          </div>
+
+          <article class="ticket" aria-label="Ingresso da Coding Conf">
+            <div class="ticket-main">
+              <div class="ticket-brand">
+                <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span>
+                  <span class="ticket-event-name">Coding Conf</span>
+                  <span class="ticket-date">15–17 de janeiro de 2025 <span aria-hidden="true">·</span> Austin, TX</span>
+                </span>
+              </div>
+              <div class="attendee">
+                <img id="ticket-avatar" alt="">
+                <span class="attendee-details">
+                  <span class="attendee-name" id="ticket-name"></span>
+                  <span class="attendee-github"><span aria-hidden="true">⌁</span> <span id="ticket-github"></span></span>
+                </span>
+              </div>
+            </div>
+            <div class="ticket-number" aria-label="Número do ingresso">#01609</div>
+          </article>
+          <button class="reset-button" id="reset-button" type="button">Gerar outro ingresso</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
